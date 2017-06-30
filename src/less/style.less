@@ -1,3 +1,12 @@
+
+// mixin for media query
+.screen(@min, @max, @ruleset) {
+  @media (min-width: @min) and (max-width: (@max - 1)) {
+    @ruleset();
+  }
+}
+
+
 * {
     box-sizing: border-box;
 }
@@ -7,12 +16,19 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: Open Sans,Arial,Helvetica Neue,Helvetica,Roboto,sans-serif;
+    font-family: OpenSans,Arial,Helvetica Neue,Helvetica,Roboto,sans-serif;
     color: #333;
 
 }
 
-.header-logo {
+.header__bar {
+    display: none;
 
+    .screen(768px, 2220, {
+        display: block;
+    });
+
+}
+.header-logo {
 
 }

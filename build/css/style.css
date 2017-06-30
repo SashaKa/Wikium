@@ -8,6 +8,14 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Open Sans, Arial, Helvetica Neue, Helvetica, Roboto, sans-serif;
+  font-family: OpenSans, Arial, Helvetica Neue, Helvetica, Roboto, sans-serif;
   color: #333;
+}
+.header__bar {
+  display: none;
+}
+@media (min-width: 768px) and (max-width: 2219) {
+  .header__bar {
+    display: block;
+  }
 }
