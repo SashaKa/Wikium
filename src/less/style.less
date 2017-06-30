@@ -1,4 +1,7 @@
 
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=cyrillic-ext');
+
 // mixin for media query
 .screen(@min, @max, @ruleset) {
   @media (min-width: @min) and (max-width: (@max - 1)) {
@@ -6,6 +9,13 @@
   }
 }
 
+
+@thinking-orange: #fb9700;
+@memory-green: #86c634;
+@attention-blue: #00adee;
+@text-color: #999999;
+@bold-color: #333333;
+@background-fill: #f7f5fa;
 
 * {
     box-sizing: border-box;
@@ -16,12 +26,26 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: OpenSans,Arial,Helvetica Neue,Helvetica,Roboto,sans-serif;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
     color: #333;
+    line-height: 1.15;
 
 }
 
-.header__bar {
+header{
+    width: 100%;
+}
+.header__wrapper {
+    padding: 7% 5% 7% 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 11%;
+    background-color: #fff;
+}
+
+.header__progress-bar {
     display: none;
 
     .screen(768px, 2220, {
@@ -32,3 +56,119 @@ body {
 .header-logo {
 
 }
+
+.header__login {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: @text-color;
+    text-transform: uppercase;
+    width: 30%;
+}
+
+.main {
+    background-color: @background-fill;
+    padding: 7% 5% 2.5% 5%; 
+}
+.main__wrapper {
+    background-color: #fff;
+}
+.main__title {
+    padding: 5% 1%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    color: @bold-color;
+}
+.statistic-mobile{
+    padding: 5%;
+}
+
+
+.statistic-mobile-description{
+    background-color: @background-fill;
+    padding: 0.5rem 1rem;
+}
+.statistic__text {
+    line-height: 1.5;
+}
+.skills-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.skills-value {
+    margin-left: auto;
+    font-size: 1.2rem;
+    color: @bold-color;
+}
+.skills-name {
+    font-size: 1rem;
+    color: @text-color;
+}
+
+.skills-scale {
+    width: 100%;
+    height: 4px;
+    
+    position: relative;
+}
+
+.range-attention {
+    background-color: @attention-blue;
+}
+
+.range__memory {
+    background-color: @memory-green;
+}
+
+.range__intellection {
+    background-color: @thinking-orange;
+}
+.skills-scale__range {
+    position: absolute;
+    height: 14px;
+    width: 53px;
+    left: 0;
+    top: -7px;
+}
+
+.scale__attention {
+    background-color: lighten(@attention-blue,30%);
+}
+
+.scale__memory {
+    background-color: lighten(@memory-green,30%);
+}
+
+.scale__intellection {
+    background-color: lighten(@thinking-orange,30%);
+
+}
+
+.statistic__button {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    background: #6039AA;
+    transition:all .3s ease-out;
+    height: 3.125em;
+    padding: 1rem 3.5rem 1em 2.5rem;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.10), 0 2px 4px 0 rgba(0,0,0,0.50);
+    border-radius: 50px;
+
+    &:hover {
+        background-color: @attention-blue;
+    }
+
+}
+.button__arrow {
+    position: absolute;
+    background: url('../img/shape.svg') no-repeat center;
+    right: 22px;
+    bottom: 28%;
+    height: 18px;
+    width: 22px;
+
+;}
