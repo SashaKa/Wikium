@@ -43,18 +43,50 @@ header{
     justify-content: space-between;
     height: 11%;
     background-color: #fff;
+
+    .screen(768px, 2220px, {
+        align-items: flex-end;
+    });
 }
 
 .header__progress-bar {
     display: none;
 
-    .screen(768px, 2220, {
+    .screen(768px, 2220px, {
         display: block;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
     });
 
 }
-.header-logo {
 
+.progress-bar__scale{
+    width: 100%;
+    height: 2px;
+    background-color: @text-color;
+    position: relative;
+}
+
+.progress-bar__range {
+    position: absolute;
+    background-color: #6039AA;
+    height: 2px;
+    width: 70px;
+}
+
+.progress-bar__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: @text-color;
+}
+
+.progress-bar__item {
+    display: flex;
 }
 
 .header__login {
@@ -63,15 +95,26 @@ header{
     color: @text-color;
     text-transform: uppercase;
     width: 30%;
+
+    &:hover {
+        color: @bold-color;
+    }
+    
+    .screen(768px, 2220px, {
+        width: 10%;
+    });
+
 }
 
 .main {
     background-color: @background-fill;
     padding: 7% 5% 2.5% 5%; 
 }
+
 .main__wrapper {
     background-color: #fff;
-}
+} 
+
 .main__title {
     padding: 5% 1%;
     font-size: 1.2rem;
@@ -79,18 +122,89 @@ header{
     line-height: 1.5;
     text-align: center;
     color: @bold-color;
+
+     .screen(768px, 2220px, {
+        font-size: 1.8rem;
+    });
 }
+
 .statistic-mobile{
     padding: 5%;
+
+    .screen(768px, 2220px, {
+        display: none;
+    });
 }
 
 
-.statistic-mobile-description{
-    background-color: @background-fill;
-    padding: 0.5rem 1rem;
+
+// --------------------Desctop Statistic----------
+.statistic-desctop {
+    display: none;
+
+    .screen(768px, 2220px, {
+        display: block;
+        display: flex;
+        justify-content: space-around;
+    });
+
 }
-.statistic__text {
-    line-height: 1.5;
+
+.statistic-circle {
+    width: 200px;
+    height: 190px;
+    margin-top: 3rem;
+    position: relative;
+}
+.circle-svg {
+    position: absolute;
+    top: -58px;
+    left: 24px;
+}
+.statistic-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.info-skills-name {
+    margin: 0;
+}
+
+.info-scale__value {
+    position: absolute;
+    bottom: 0;
+}
+.circle-svg,
+.info-skills-value,
+.info-scale__value {
+    font-size: 1.2rem;
+    color: @bold-color;
+    margin: 0;
+}
+
+
+.statistic__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.statistic__item-left {
+   width: 90%;
+
+}
+.skills-mark {
+    align-self: flex-end;
+}
+
+
+.skills-scale__value{
+    position: absolute;
+    right: 8px;
+    bottom: -7px;
+    font-size: 1.2rem;
+    color: @bold-color;
 }
 .skills-title {
     display: flex;
@@ -102,7 +216,8 @@ header{
     font-size: 1.2rem;
     color: @bold-color;
 }
-.skills-name {
+.skills-name,
+.info-skills-name {
     font-size: 1rem;
     color: @text-color;
 }
@@ -110,7 +225,6 @@ header{
 .skills-scale {
     width: 100%;
     height: 4px;
-    
     position: relative;
 }
 
@@ -146,6 +260,51 @@ header{
 
 }
 
+// ---------------DEscription -------------------------
+.statistic-description {
+    background-color: @background-fill;
+    padding: 0.5rem 1rem;
+    margin: 3rem 0;
+
+    .screen(768px, 2220px, {
+       padding: 1rem;
+       margin: 8%;
+       display: flex;
+       margin-top: 0;
+    });
+}
+
+.statistic__text {
+    line-height: 1.5;
+
+    .screen(768px, 2220px, {
+        font-size: 1.2rem;
+        color: @bold-color;
+        margin: 0 0 0 3rem; 
+    });
+}
+
+.statistic-offer-desctop {
+    display: none;
+    .screen(768px, 2220px, {
+        display: block;
+        display: flex;
+        margin: 0 8%;
+    });
+
+}
+.offer-text,
+.number-users {
+    color: @text-color;
+    font-size: 0.8rem;
+    line-height: 1.15;
+}
+.offer-text {
+    float: left;
+    width: 50%;
+}
+// ----------button-----------------------------
+
 .statistic__button {
     position: relative;
     text-decoration: none;
@@ -157,6 +316,13 @@ header{
     padding: 1rem 3.5rem 1em 2.5rem;
     box-shadow: 0 0 4px 0 rgba(0,0,0,0.10), 0 2px 4px 0 rgba(0,0,0,0.50);
     border-radius: 50px;
+    margin: 0 auto;
+    display: table;
+
+    .screen(768px, 2220px, {
+        margin-left: auto;
+    });
+
 
     &:hover {
         background-color: @attention-blue;

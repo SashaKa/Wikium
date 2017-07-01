@@ -33,13 +33,71 @@ header {
   height: 11%;
   background-color: #fff;
 }
+@media (min-width: 768px) and (max-width: 2219px) {
+  .header__wrapper {
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -moz-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+}
 .header__progress-bar {
   display: none;
 }
-@media (min-width: 768px) and (max-width: 2219) {
+@media (min-width: 768px) and (max-width: 2219px) {
   .header__progress-bar {
     display: block;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 70%;
   }
+}
+.progress-bar__scale {
+  width: 100%;
+  height: 2px;
+  background-color: #999999;
+  position: relative;
+}
+.progress-bar__range {
+  position: absolute;
+  background-color: #6039AA;
+  height: 2px;
+  width: 70px;
+}
+.progress-bar__list {
+  list-style: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #999999;
+}
+.progress-bar__item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .header__login {
   font-size: 0.8rem;
@@ -47,6 +105,14 @@ header {
   color: #999999;
   text-transform: uppercase;
   width: 30%;
+}
+.header__login:hover {
+  color: #333333;
+}
+@media (min-width: 768px) and (max-width: 2219px) {
+  .header__login {
+    width: 10%;
+  }
 }
 .main {
   background-color: #f7f5fa;
@@ -63,15 +129,113 @@ header {
   text-align: center;
   color: #333333;
 }
+@media (min-width: 768px) and (max-width: 2219px) {
+  .main__title {
+    font-size: 1.8rem;
+  }
+}
 .statistic-mobile {
   padding: 5%;
 }
-.statistic-mobile-description {
-  background-color: #f7f5fa;
-  padding: 0.5rem 1rem;
+@media (min-width: 768px) and (max-width: 2219px) {
+  .statistic-mobile {
+    display: none;
+  }
 }
-.statistic__text {
-  line-height: 1.5;
+.statistic-desctop {
+  display: none;
+}
+@media (min-width: 768px) and (max-width: 2219px) {
+  .statistic-desctop {
+    display: block;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+}
+.statistic-circle {
+  width: 200px;
+  height: 190px;
+  margin-top: 3rem;
+  position: relative;
+}
+.circle-svg {
+  position: absolute;
+  top: -58px;
+  left: 24px;
+}
+.statistic-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+.info-skills-name {
+  margin: 0;
+}
+.info-scale__value {
+  position: absolute;
+  bottom: 0;
+}
+.circle-svg,
+.info-skills-value,
+.info-scale__value {
+  font-size: 1.2rem;
+  color: #333333;
+  margin: 0;
+}
+.statistic__item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.statistic__item-left {
+  width: 90%;
+}
+.skills-mark {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+.skills-scale__value {
+  position: absolute;
+  right: 8px;
+  bottom: -7px;
+  font-size: 1.2rem;
+  color: #333333;
 }
 .skills-title {
   display: -webkit-box;
@@ -95,7 +259,8 @@ header {
   font-size: 1.2rem;
   color: #333333;
 }
-.skills-name {
+.skills-name,
+.info-skills-name {
   font-size: 1rem;
   color: #999999;
 }
@@ -129,6 +294,57 @@ header {
 .scale__intellection {
   background-color: #ffd595;
 }
+.statistic-description {
+  background-color: #f7f5fa;
+  padding: 0.5rem 1rem;
+  margin: 3rem 0;
+}
+@media (min-width: 768px) and (max-width: 2219px) {
+  .statistic-description {
+    padding: 1rem;
+    margin: 8%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 0;
+  }
+}
+.statistic__text {
+  line-height: 1.5;
+}
+@media (min-width: 768px) and (max-width: 2219px) {
+  .statistic__text {
+    font-size: 1.2rem;
+    color: #333333;
+    margin: 0 0 0 3rem;
+  }
+}
+.statistic-offer-desctop {
+  display: none;
+}
+@media (min-width: 768px) and (max-width: 2219px) {
+  .statistic-offer-desctop {
+    display: block;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 8%;
+  }
+}
+.offer-text,
+.number-users {
+  color: #999999;
+  font-size: 0.8rem;
+  line-height: 1.15;
+}
+.offer-text {
+  float: left;
+  width: 50%;
+}
 .statistic__button {
   position: relative;
   text-decoration: none;
@@ -143,6 +359,13 @@ header {
   -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   border-radius: 50px;
+  margin: 0 auto;
+  display: table;
+}
+@media (min-width: 768px) and (max-width: 2219px) {
+  .statistic__button {
+    margin-left: auto;
+  }
 }
 .statistic__button:hover {
   background-color: #00adee;
